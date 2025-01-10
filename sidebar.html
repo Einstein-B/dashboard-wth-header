@@ -1,0 +1,432 @@
+
+<!-------------------------------------------------------------
+    WRITTEN BY: BOLARINWA SOGO
+    DATE: 11/04/2021
+    CONTACT: 08130954145
+------------------------------------------------------------------------------------>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <!--
+        <link rel="stylesheet" href="../Assets/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../Assets/css/userStyling.css" type="text/css">
+         <link rel="stylesheet" href="../Assets/css/stepForm.css" type="text/css">
+
+        <link rel="stylesheet" href="../Assets/css/Admin.css" type="text/css">
+        <link rel="stylesheet" href="../Assets/css/custom.css" type="text/css">
+        <link rel="icon" href="../Favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="../Assets/css/Loader.css" type="text/css">
+
+        <script src="../Assets/js/jquery.min.js" type="text/javascript"></script>
+        <script src="../Assets/js/Chart.min.js" type="text/javascript"></script>
+        <script	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+        -->
+        <link rel="stylesheet" href="style/all.css" type="text/css">
+        <link rel="stylesheet" href="style/userStyling.css" type="text/css">
+        <link rel="stylesheet" href="style/Head.css" type="text/css">
+        <link rel="stylesheet" href="style/Side.css" type="text/css">
+        <!-- <link rel="stylesheet" href="style/Admin.css" type="text/css">
+        <link rel="stylesheet" href="style/custom.css" type="text/css"> -->
+    </head>
+    <!-- <script>
+        document.onreadystatechange = function () {
+            if (document.readyState !== "complete") {
+                document.querySelector(
+                    "body").style.visibility = "hidden";
+                document.querySelector(
+                    ".page-loader").style.visibility = "visible";
+            } else {
+                document.querySelector(
+                    ".page-loader").style.display = "none";
+                document.querySelector(
+                    "body").style.visibility = "visible";
+            }
+        };
+    </script> -->
+
+    <style>
+        /* Pre-loader CSS */
+        .page-loader{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background: rgb(177, 71, 124);
+            z-index: 1000;
+            .txt{
+                color: #e4d2e1;
+                text-align: center;
+                top: 40%;
+                position: relative;
+                text-transform: uppercase;
+                letter-spacing: 0.3rem;
+                font-weight: bold;
+                line-height: 1.5;
+            }
+        }
+
+        ul.right-nav li i.dummy{
+            font-size: 30px;
+        }
+
+        /* Spinner animation */
+        .spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 35%;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 50%;
+            -webkit-animation: sk-scaleout 2.0s infinite ease-in-out;
+            animation: sk-scaleout 2.0s infinite ease-in-out;
+
+        }
+        .spinner img{
+            width: 160px;
+            height: 160px;
+        }
+        @-webkit-keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0)
+            }
+            100% {
+                -webkit-transform: scale(1.0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+            100% {
+                -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+                opacity: 0;
+            }
+        }
+
+        @media only screen and (max-width:520px) {
+            .page-loader{
+                .txt{
+                    top: 60%;
+                }
+            }
+
+            /* Spinner animation */
+            .spinner {
+                top: 40%;
+                width: 100px;
+                height: 100px;
+            }
+
+        }
+    </style>
+
+    <body>
+        <!-- <div class="page-loader">
+            <div class="spinner"><img src="../Assets/images/<?php echo $info['logo'] ?>"/></div>
+            <div class="txt">Loading...</div>
+        </div> -->
+        <div class="navbar">
+            <div class="logo-details">
+                <a href="javascript:void" class='SideToggle'>
+                    <i class="fa fa-bars" style= "font-size: 25px; color: grey; margin-right:20px;"> </i>
+                </a>
+                <img src="images/logo.png" class="favicon" />
+            </div>
+            <div class="nav">
+                <ul class="left-nav">
+                    <li class="toggle"><i class="fa fa-bars"></i></li>
+                </ul>
+                <ul class="right-nav">
+                    <li>
+                        <a href="#"><span class="badge bgsuccess"></span><i class="fa fa-envelope"></i></a>
+                    </li>
+                    <li class="userImage">
+                        <img src="images/pass.jpg" />
+                        <!-- <i class='fa fa-user-circle dummy'></i> -->
+                    </li>
+                    <li>
+                        <span class="user">Daniel</span> &nbsp;
+                        <i class="fa fa-caret-down" id='alternator'></i>
+                    </li>
+                </ul>
+                <div class="moreInfo">
+                    <div class="userInfo">
+                        <img src="images/pass.jpg">
+                        <p class="fullName">Daniel Kennedy</p>
+                        <p class="position">L2 Admin</p>
+                    </div>
+                    <div class="quickAction">
+                        <p class="link"><a href="#">Change password</a></p>
+                        <p id='logOut'>
+                            <a class="botton" href="#"><i class="fa fa-sign-out-alt"></i>&nbsp; Logout</a>
+                            <a class="botton" href="#"><i class="fa fa-user-cog"></i>&nbsp; Profile</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="sidebar scroll"> 
+                <div class="userInfo"> 
+                    <img src="images/pass.jpg">
+                    <div class="textContainer">
+                        <p>Daniel Kennedy</p>
+                        <small>L2 Admin</small>
+                    </div>
+                </div>
+                <ul class="nav-links">
+            <!-- ---------------------------------------  Home  -------------------------------------->
+                    <li id="sideDashboard">
+                        <a href="#"> 
+                            <i class="fa fa-tachometer-alt icon"></i>
+                            <span class="link-name">Dashboard</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li class="link-name"><a href="#">Dashboard</a></li>
+                        </ul>
+                    </li>
+                   
+             <!-- ---------------------------------------  Academic  -------------------------------------->
+                    <li>
+                        <div class="icon-link">
+                            <span class="span-i">
+                                <i class="fa fa-book icon"></i>
+                                <span class="link-name">Academic</span>
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div> 
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="#">Academic</a></li>
+                            <li class="#"><a href="#">Arms</a></li>
+                            <li class="#"><a href="#">Classes</a></li>
+                            <li class="#"><a href="#">Subjects</a></li>
+                        </ul>                   
+                    </li>  
+            
+             <!-- ---------------------------------------  Staffs  -------------------------------------->
+            
+                    <li>
+                        <div class="icon-link">
+                            <span class="span-i">
+                                <i class="fa fa-user-tie icon"></i>
+                                <span class="link-name">Staff</span>
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div> 
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="#">Staff</a></li>
+                            <li class="#"><a href="#">Manage Staff</a></li>
+                            <li class="#"><a href="#">Assign Staff</a></li>
+                        </ul>                   
+                    </li>
+            
+             <!-- ---------------------------------------  Students  -------------------------------------->
+                    <li>
+                        <div class="icon-link">
+                            <!-- <a href="">
+                                <i class="fa fa-book icon"></i>
+                                <span class="link-name">Academic</span>
+                            </a> -->
+                            <span class="span-i">
+                                <i class="fa fa-user-graduate icon"></i>
+                                <span class="link-name">Student</span>
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div> 
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="#">Students</a></li>
+                            <li class="#"><a href="#">Manage Student</a></li>
+                            <li class="#"><a href="#">Transfer Student</a></li>
+                        </ul>                   
+                    </li>
+            
+             <!-- ---------------------------------------   C. A   ------------------------------------------->
+                    <li>
+                        <div class="icon-link">
+                            <span class="span-i">
+                                <i class="fa fa-sticky-note icon"></i>
+                                <span class="link-name">C.A Test</span>  
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="">C.A Test</a></li>
+                            <li><a href="#">Input C.A Scores</a></li>
+                            <li><a href="#" id=''>Vet C.A Records</a></li>
+                            <li><a href="#">Psychomotor</a></li>
+                            <li><a href="#" id=''>Comment</a></li>
+                            <li><a href="#">Check C.A Result</a></li>
+                        </ul>
+                    </li>
+            
+            <!----------------------------------CBT -------------------- -->
+                    <li>
+                        <div class="icon-link">
+                            <span class="span-i">
+                                <i class="fa fa-desktop icon"></i>
+                                <span class="link-name">CBT</span>  
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="">CBT</a></li>
+                            <li><a href="#" id=''>Approve Exam</a></li>
+                            <li><a href="#" id=''>Examinees</a></li>
+                            <li><a href="#" id=''>Add Exam</a></li>
+                            <li><a href="#">Examinees' Result</a></li>
+                            <li><a href="#">Exam Ranking</a></li>
+                        </ul>
+                    </li>
+            
+            <!----------------------------------------  Examination  -------------------------------------->
+                    <li>
+                        <div class="icon-link">
+                            <span class="span-i">
+                                <i class="fa fa-file-signature icon"></i>
+                                <span class="link-name">Examination</span>  
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="">Examination</a></li>
+                            <li><a href="#">Input Scores</a></li>
+                            <li><a href="#" id=''>Vet Records</a></li>
+                            <li><a href="#">Psychomotor</a></li>
+                            <li><a href="#" id=''>Add Comment</a></li>
+                        </ul>
+                    </li>
+            
+             <!-- ---------------------------------------  Student Result  ------------------------------------->
+                    <li>
+                        <!-- <div class="icon-link"> -->
+                        <a href="../checkResult.php">
+                            <i class="fa fa-chart-pie icon"></i>
+                            <span class="link-name">Student's Result</span>
+                        </a>
+                        <!-- </div> -->
+                        <ul class="sub-menu blank">
+                            <li class="link-name"><a href="../checkResult.php">Student's Result</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <div class="icon-link">
+                            <span class="span-i">
+                                <i class="fa fa-chart-pie icon"></i>
+                                <span class="link-name">Result</span>
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="#">Result</a></li>
+                            <li><a href="../../checkResult.php">Check Result</a></li>
+                        </ul>
+                    </li> -->
+                    <!-- <li>
+                        <div class="icon-link">
+                            <span class="span-i">
+                                <i class="fa fa-credit-card icon"></i>
+                                <span class="link-name">Accounting</span>
+                            </span>
+                            <i class="fa fa-chevron-right arrow"> </i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li class="link-name"><a href="#">Accounting</a></li>
+                            <li><a href="#">Fee Type</a></li>
+                            <li><a href="#">Expense list</a></li>
+                            <li><a href="#">Expense Type</a></li>
+                        </ul>
+                    </li> -->
+            
+             <!-- ---------------------------------------  Backup  -------------------------------------->
+                    
+                    <li>
+                        <!-- <div class="icon-link"> -->
+                        <a href="#">
+                            <i class="fa fa-save icon"></i>
+                            <span class="link-name">BackUp</span>
+                            <!-- <span class=""><i class="fa fa-circle"></i></span> -->
+                        </a>
+                        <!-- </div> -->
+                        <ul class="sub-menu blank">
+                            <li class="link-name"><a href="#">BackUp</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <!-- <div class="icon-link"> -->
+                        <a href="admin.php?page=settings">
+                            <i class="fa fa-cog icon"></i>
+                            <span class="link-name">Settings</span>
+                        </a>
+                        <!-- </div> -->
+                        <ul class="sub-menu blank">
+                            <li class="link-name"><a href="#">Settings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="aside">
+
+            </div>
+        </div>
+            
+        <div class="panel-footer">
+            <p>
+                <span> Pivot e-learning</span>
+                <small> &copy; 2021</small>
+                <small>All rights reserved</small>
+            </p>
+            <p class="sm-none">
+                <small style="color:white;">Developed by :</small> 
+                <span style="color:rgb(172, 197, 221);"> Bolarinwa Sogo</span>
+            </p>
+        </div> 
+
+        <script src="script/jquery.min.js" type="text/javascript"></script> 
+        <script src="script/sidebar.js" type="text/javascript"></script> 
+        <!-- <script src="../Assets/js/PopUp.js" type="text/javascript"></script> -->
+    </body> 
+</html>   
+               
+        <!-- <script src="../Assets/js/chartJs.js" type="text/javascript"></script> 
+        <script src="../Assets/js/all.js" type="text/javascript"></script> 
+        <script src="../Assets/js/ADDteacher.js" type="text/javascript"></script> 
+        <script src="../Assets/js/ADDstudents.js" type="text/javascript"></script>
+        <script src="../Assets/js/stepform.js" type="text/javascript"></script> 
+        <script src="../Assets/js/bootstrap.min.js" type="text/javascript"></script> 
+        
+        
+        
+        
+        
+        <script src="../Assets/js/settingScript.js" type="text/javascript"></script>
+        <script src="../Assets/js/change_Password.js" type="text/javascript"></script> 
+        
+         
+        
+        <script src="../Assets/js/STudents.js" type="text/javascript"></script>
+        <script src="../Assets/js/TeachersAjaxcall.js" type="text/javascript"></script>
+        <script src="../Assets/js/studentAjaxCall.js" type="text/javascript"></script>
+        <script src="../Assets/js/psychoAjaxCall.js" type="text/javascript"></script>
+        <script src="../Assets/js/deleteExamScore.js" type="text/javascript"></script>
+        <script src="../Assets/js/loadFirstTerm_ExamScore.js" type="text/javascript"></script>
+        <script src="../Assets/js/LoadSecondTermExamScore.js" type="text/javascript"></script>
+        <script src="../Assets/js/admin.js" type="text/javascript"></script>
+        <script src="../Assets/js/Exams.js" type="text/javascript"></script>
+        <script src="../Assets/js/populate__Student__Ajax.js" type="text/javascript"></script>-->
+        
+        
+        

@@ -1,0 +1,254 @@
+/* -------------------------------------------------------------------------------------------------------------
+       ------------------------    NAVBAR CREATED BY BOLARINWA SOGO   -----------------------
+------------------------------------------------------------------------------------------------------------- */
+ 
+/* FOR DESKTOP VIEW */
+body{
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    margin-right: -57px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #e2e7ee;
+}
+.navbar{
+    display: flex;
+    width: inherit;
+    height: 7%;
+    padding: 2px 0px 2px 15px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 0 20px rgba(92, 90, 90, 0.473);
+    z-index: 1000;
+}
+.navbar .logo-details{
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.logo-details img.favicon{
+    width: 100px;
+    height: 35px;
+    margin:0 10px;
+}
+.navbar .logo-details .logo-name{
+    text-transform: uppercase;
+    font-size:18px;
+    color:#83317c;
+    font-weight: 600;
+}
+.navbar .nav{
+    position: relative;
+    height:50px;
+    width:76%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    flex:2;
+}
+.navbar .left-nav{
+    display: none;
+}
+.navbar .right-nav{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-right: 10px;
+    height: 50px;
+    margin-left:auto;
+    position: relative;
+} 
+.navbar .right-nav .userImage img{
+    height:30px;
+    width: 30px;
+    border: 0;
+    padding: 2px;
+    border-radius: 50%;
+}
+ .navbar .nav ul li a span.badge{
+    position: absolute;
+    top: 5px;
+    left: 22px;
+    font-size: 9px;
+    padding: 4px 3px 2px;
+    transition: all 0.7s ease;
+}
+#alternator, .toggle{
+    cursor: pointer;
+    transform: rotate(0deg); 
+    transition: all 0.5s ease;
+} 
+#alternator.rotate{
+    transform: rotate(180deg);
+}
+.navbar li{
+    display:inline;
+    list-style: none;
+    padding:0 5px;
+    font:16px bold;
+    color:rgba(0, 0, 0, 0.57);
+} 
+/* FOR THE DROPDOWN DISPLAY */
+.nav .moreInfo{
+    display: none;
+    background: #011130;
+    position: absolute;
+    top:100%;
+    right: 0;
+    padding: 5px 1px 1px;
+    border-radius: 0 0 5px 5px;
+    width: 270px;
+    z-index: 1000;
+}
+.nav .moreInfo .userInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 268px;
+    padding: 5px 0 -5px;
+    margin:1px auto;
+}
+.nav .moreInfo .userInfo img{
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.nav .moreInfo .userInfo p{
+    color: rgba(255, 255, 255, 0.952);
+    letter-spacing: 0.1rem;
+    font-size: 10px;
+    opacity: 0.8;
+}
+.nav .moreInfo .userInfo p + p{
+    opacity: 0.6;
+}
+.nav .moreInfo .userInfo .fullName{
+    margin: 0;
+    font-size: 12px;
+    line-height: 0.5em;
+}
+.nav .moreInfo .quickAction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    padding:0;
+    background: #EFEDED;
+    border-radius: 0 0 5px 5px;
+}
+.nav .moreInfo .quickAction p{
+    padding: 0;
+    margin: 0;
+}
+.nav .moreInfo .quickAction p.link a{
+    text-decoration: none;
+    color: #691737;
+    font-size: 12px;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+.nav .moreInfo .quickAction p:hover a{
+    color: #011130;
+}
+.nav .moreInfo .quickAction p#logOut{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0 0;
+    padding: 0;
+    width: 100%;
+}
+.nav .moreInfo .quickAction p#logOut a{
+    text-decoration: none;
+    color: #011130;
+    font-size: 14px;
+    padding:3px 20px;
+    background-color: #dac4c1;
+    border-radius: 30px;
+    box-shadow: 2px 1px 1px rgb(141, 141, 141);
+    transition: all 0.5s ease;
+}
+.nav .moreInfo .quickAction p#logOut a + a{
+    background-color: #cfd2d4;
+}
+.nav .moreInfo .quickAction p#logOut a:hover{
+    background-color: #949494;
+}
+
+
+/* FOR TAB VIEW [780PX] */
+@media only screen and (max-width:800px) and (min-width:520px) {
+    .navbar{
+         display:flex;
+         padding:5px;
+         justify-content: center;
+         align-items: center;
+     }
+     .navbar .logo-details{
+         padding-left:10px;
+         height:50px;
+     }
+     .logo-details img.favicon{
+         width:60px;
+         height: 45px;
+         margin-right: 5px;
+     }
+     .navbar .logo-details .logo-name{
+       font-size:15px;
+       font-weight: 600;
+       color: #2A5798;
+     }
+     .navbar .nav{
+        width:100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items:center;
+    }
+} 
+
+
+/* FOR SMALL SCREEN DISPLAY */
+@media only screen and (max-width: 519px) {
+    .navbar .left-nav{
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        padding:0;
+        font-size: 40px;
+    }
+    .navbar .left-nav li{
+        font-size: 25px;
+        color:rgba(0, 0, 0, 0.74);
+        cursor: pointer;
+        transition:all 0.5s ease;
+    }
+    .navbar .right-nav{
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .navbar .nav ul li a span.badge{
+       top: 23px;
+       left: 6px;
+       font-size: 9px;
+   }
+     .navbar .logo-details{
+        display: none;
+    }
+    .navbar li {
+        margin:0;
+        padding:0 5px;
+        font:15px bold;
+    }
+
+}
