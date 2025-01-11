@@ -118,6 +118,8 @@ body{
 }
 .nav .moreInfo .userInfo img{
     border: 2px solid white;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
@@ -163,7 +165,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 10px 0 0;
+    margin: 10px 0;
     padding: 0;
     width: 100%;
 }
